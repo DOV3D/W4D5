@@ -71,9 +71,8 @@ var 1 => keep tally of largest sum
 var 2 => tracks current sum
 =end
 
-    if list.all? {|el| el < 0}
-        return list.max
-    end
+    return list.max if list.all? {|el| el < 0}
+
     largest_sum = list[0]
     current_sum = 0    
     (0...list.length).each do |i|
@@ -92,6 +91,7 @@ var 2 => tracks current sum
     largest_sum
 end
 
+p 
 
 
 
