@@ -25,18 +25,18 @@ end
 # p second_anagram?("gizmo", "sally")    #=> false
 # p second_anagram?("elvis", "lives")    #=> true
 
-def third_anagram?(str1, str2)
-    jumble_sort(str1) == jumble_sort(str2)
+def third_anagram?(str1, str2) # O(n^2)
+    jumble_sort(str1) == jumble_sort(str2) 
 end
 
 def jumble_sort(str)
-    alpha = ("a".."z").to_a
+    alpha = ("a".."z").to_a 
     sorted = false
 
-    until sorted
-        sorted = true
-        (0...str.length - 1).each do |i|
-            if alpha.index(str[i]) > alpha.index(str[i + 1])
+    until sorted # (n)
+        sorted = true # constant
+        (0...str.length - 1).each do |i| # (n)
+            if alpha.index(str[i]) > alpha.index(str[i + 1]) # Ask TA (n)
                 str[i], str[i + 1] = str[i + 1], str[i]
                 sorted = false
             end
